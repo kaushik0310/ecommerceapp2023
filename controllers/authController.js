@@ -104,8 +104,34 @@ export const loginController = async(req,res) =>{
     }
 };
 
+//forgotpassword controller
+
+export const forgotPasswordController = async(req,res)=>{
+    try {
+        const{email,answer,newPassword}=req.body;
+        if(!email){
+            res.staus(400).send({message:"Email is required"})
+        }
+        if(!answer){
+            res.staus(400).send({message:"answer is required"})
+        }
+        if(!newPassword){
+            res.staus(400).send({message:"newPassword is required"})
+        }
+    } catch (error) {
+        console.log(error)
+        res.status(500).send({
+            success:false,
+            message:'something went wrong',
+            error
+        })
+    }
+}
+
 //test controller
 export const testController = (req,res)=>{
     res.send("protected Route");
     
 };
+
+
