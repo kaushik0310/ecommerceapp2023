@@ -41,11 +41,11 @@ export const updateCategoryController =async (req,res) => {
         );
         res.status(200).send({
             success: true,
-            message: "Categoru updated successfully",
+            message: "Category updated successfully",
             category,
         })
         
-    } catch (error) {
+    } catch (error) {      
         console.log(error)
         res.status(500).send({
             success:false,

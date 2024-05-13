@@ -64,7 +64,7 @@ export const getProductController = async(req,res)=>{
         res.status(500).send({
             success:false,
             message:'Error in getting products',
-            //errror
+            //error
             error:error.message
         })
         
